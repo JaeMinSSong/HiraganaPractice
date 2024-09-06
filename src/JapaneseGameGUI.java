@@ -8,9 +8,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class HiraganaGameGUI extends JFrame {
+public class JapaneseGameGUI extends JFrame {
     // 히라가나와 발음 매핑
     private static final Map<String, String> hiraganaMap = new HashMap<>();
+    // 가타카나와 발음 매핑
+    private static final Map<String, String> katakanaMap = new HashMap<>();
 
     static {
         // 기본 히라가나
@@ -127,25 +129,141 @@ public class HiraganaGameGUI extends JFrame {
 
         // 촉음
         hiraganaMap.put("っ", "tsu");
+
+        // 기본 가타카나
+        katakanaMap.put("ア", "a");
+        katakanaMap.put("イ", "i");
+        katakanaMap.put("ウ", "u");
+        katakanaMap.put("エ", "e");
+        katakanaMap.put("オ", "o");
+        katakanaMap.put("カ", "ka");
+        katakanaMap.put("キ", "ki");
+        katakanaMap.put("ク", "ku");
+        katakanaMap.put("ケ", "ke");
+        katakanaMap.put("コ", "ko");
+        katakanaMap.put("サ", "sa");
+        katakanaMap.put("シ", "shi");
+        katakanaMap.put("ス", "su");
+        katakanaMap.put("セ", "se");
+        katakanaMap.put("ソ", "so");
+        katakanaMap.put("タ", "ta");
+        katakanaMap.put("チ", "chi");
+        katakanaMap.put("ツ", "tsu");
+        katakanaMap.put("テ", "te");
+        katakanaMap.put("ト", "to");
+        katakanaMap.put("ナ", "na");
+        katakanaMap.put("ニ", "ni");
+        katakanaMap.put("ヌ", "nu");
+        katakanaMap.put("ネ", "ne");
+        katakanaMap.put("ノ", "no");
+        katakanaMap.put("ハ", "ha");
+        katakanaMap.put("ヒ", "hi");
+        katakanaMap.put("フ", "fu");
+        katakanaMap.put("ヘ", "he");
+        katakanaMap.put("ホ", "ho");
+        katakanaMap.put("マ", "ma");
+        katakanaMap.put("ミ", "mi");
+        katakanaMap.put("ム", "mu");
+        katakanaMap.put("メ", "me");
+        katakanaMap.put("モ", "mo");
+        katakanaMap.put("ヤ", "ya");
+        katakanaMap.put("ユ", "yu");
+        katakanaMap.put("ヨ", "yo");
+        katakanaMap.put("ラ", "ra");
+        katakanaMap.put("リ", "ri");
+        katakanaMap.put("ル", "ru");
+        katakanaMap.put("レ", "re");
+        katakanaMap.put("ロ", "ro");
+        katakanaMap.put("ワ", "wa");
+        katakanaMap.put("ヲ", "wo");
+        katakanaMap.put("ン", "n");
+
+        // 탁음
+        katakanaMap.put("ガ", "ga");
+        katakanaMap.put("ギ", "gi");
+        katakanaMap.put("グ", "gu");
+        katakanaMap.put("ゲ", "ge");
+        katakanaMap.put("ゴ", "go");
+        katakanaMap.put("ザ", "za");
+        katakanaMap.put("ジ", "ji");
+        katakanaMap.put("ズ", "zu");
+        katakanaMap.put("ゼ", "ze");
+        katakanaMap.put("ゾ", "zo");
+        katakanaMap.put("ダ", "da");
+        katakanaMap.put("ヂ", "ji");
+        katakanaMap.put("ヅ", "zu");
+        katakanaMap.put("デ", "de");
+        katakanaMap.put("ド", "do");
+        katakanaMap.put("バ", "ba");
+        katakanaMap.put("ビ", "bi");
+        katakanaMap.put("ブ", "bu");
+        katakanaMap.put("ベ", "be");
+        katakanaMap.put("ボ", "bo");
+
+        // 반탁음
+        katakanaMap.put("パ", "pa");
+        katakanaMap.put("ピ", "pi");
+        katakanaMap.put("プ", "pu");
+        katakanaMap.put("ペ", "pe");
+        katakanaMap.put("ポ", "po");
+
+        // 요음
+        katakanaMap.put("キャ", "kya");
+        katakanaMap.put("キュ", "kyu");
+        katakanaMap.put("キョ", "kyo");
+        katakanaMap.put("シャ", "sha");
+        katakanaMap.put("シュ", "shu");
+        katakanaMap.put("ショ", "sho");
+        katakanaMap.put("チャ", "cha");
+        katakanaMap.put("チュ", "chu");
+        katakanaMap.put("チョ", "cho");
+        katakanaMap.put("ニャ", "nya");
+        katakanaMap.put("ニュ", "nyu");
+        katakanaMap.put("ニョ", "nyo");
+        katakanaMap.put("ヒャ", "hya");
+        katakanaMap.put("ヒュ", "hyu");
+        katakanaMap.put("ヒョ", "hyo");
+        katakanaMap.put("ミャ", "mya");
+        katakanaMap.put("ミュ", "myu");
+        katakanaMap.put("ミョ", "myo");
+        katakanaMap.put("リャ", "rya");
+        katakanaMap.put("リュ", "ryu");
+        katakanaMap.put("リョ", "ryo");
+        katakanaMap.put("ギャ", "gya");
+        katakanaMap.put("ギュ", "gyu");
+        katakanaMap.put("ギョ", "gyo");
+        katakanaMap.put("ジャ", "ja");
+        katakanaMap.put("ジュ", "ju");
+        katakanaMap.put("ジョ", "jo");
+        katakanaMap.put("ビャ", "bya");
+        katakanaMap.put("ビュ", "byu");
+        katakanaMap.put("ビョ", "byo");
+        katakanaMap.put("ピャ", "pya");
+        katakanaMap.put("ピュ", "pyu");
+        katakanaMap.put("ピョ", "pyo");
+
+        // 촉음
+        katakanaMap.put("ッ", "tsu");
     }
 
-    private JLabel hiraganaLabel;
+    private JLabel characterLabel;
     private JRadioButton[] optionsButtons;
     private ButtonGroup buttonGroup;
     private JButton nextButton;
     private JButton restartButton;
     private String correctAnswer;
+    private boolean isHiragana;
 
-    public HiraganaGameGUI() {
-        setTitle("히라가나 학습 게임");
+    public JapaneseGameGUI() {
+        setTitle("히라가나 & 가타카나 학습 게임");
         setSize(500, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // 히라가나 레이블 설정
-        hiraganaLabel = new JLabel("히라가나", SwingConstants.CENTER);
-        hiraganaLabel.setFont(new Font("SansSerif", Font.BOLD, 36));
-        add(hiraganaLabel, BorderLayout.NORTH);
+        // 문자 레이블 설정
+        characterLabel = new JLabel("문자", SwingConstants.CENTER);
+        characterLabel.setFont(new Font("SansSerif", Font.BOLD, 36));
+        add(characterLabel, BorderLayout.NORTH);
 
         // 보기 표시
         JPanel optionsPanel = new JPanel();
@@ -195,17 +313,20 @@ public class HiraganaGameGUI extends JFrame {
     }
 
     private void loadNewQuestion() {
-        ArrayList<String> hiraganaList = new ArrayList<>(hiraganaMap.keySet());
-        Collections.shuffle(hiraganaList);
-        String hiragana = hiraganaList.get(0);
-        correctAnswer = hiraganaMap.get(hiragana);
+        // 히라가나와 가타카나를 랜덤으로 선택
+        isHiragana = new Random().nextBoolean();
+        Map<String, String> selectedMap = isHiragana ? hiraganaMap : katakanaMap;
+        ArrayList<String> characterList = new ArrayList<>(selectedMap.keySet());
+        Collections.shuffle(characterList);
+        String character = characterList.get(0);
+        correctAnswer = selectedMap.get(character);
 
-        hiraganaLabel.setText("히라가나: " + hiragana);
+        characterLabel.setText("문자: " + character);
 
         ArrayList<String> options = new ArrayList<>();
         options.add(correctAnswer);
         while (options.size() < 4) {
-            String option = new ArrayList<>(hiraganaMap.values()).get(new Random().nextInt(hiraganaMap.size()));
+            String option = new ArrayList<>(selectedMap.values()).get(new Random().nextInt(selectedMap.size()));
             if (!options.contains(option)) {
                 options.add(option);
             }
@@ -236,7 +357,7 @@ public class HiraganaGameGUI extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new HiraganaGameGUI().setVisible(true);
+                new JapaneseGameGUI().setVisible(true);
             }
         });
     }
